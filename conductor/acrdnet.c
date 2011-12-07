@@ -19,6 +19,11 @@
 #include <assert.h>
 #include <errno.h>
 
+#if defined(__FreeBSD__) || defined(__APPLE__)
+#  include <sys/uio.h>
+#else
+#  include <sys/io.h>
+
 #include "accord_proto.h"
 #include "list.h"
 #include "work.h"

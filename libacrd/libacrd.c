@@ -28,6 +28,11 @@
 #include <pthread.h>
 #include <assert.h>
 
+#if defined(__FreeBSD__) || defined(__APPLE__)
+#  include <sys/uio.h>
+#else
+#  include <sys/io.h>
+
 #include "list.h"
 #include "accord.h"
 #include "util.h"
